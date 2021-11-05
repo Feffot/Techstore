@@ -20,12 +20,55 @@ function initSite() {
 
 /** Uses the loaded products data to create a visible product list on the website */
 function addProductsToWebpage() {
-    // Check your console to see that the products are stored in the listOfProducts varible.
-    console.log(listOfProducts);
+        let productContainer = document.createElement("div");
+        productContainer.className = "productCard";
+        for (let i = 0; i < listOfProducts.length; i++) {
+            let productCard = createProductCard(listOfProducts[i]);
+            productContainer.appendChild(productCard)
+        }
 
-    // Add your code here, remember to brake your code in to smaller function blocks
-    // to reduce complexity and increase readability. Each function should have
-    // an explainetory comment like the one for this function, see row 22.
-    
-    // TODO: Remove the console.log and these comments when you've read them.
+        document.querySelector("main").appendChild(productContainer);
+
+}
+
+function createProductCard(product) {
+    let productCardContainer = document.createElement("div");
+    productCardContainer.className = "ProductCard"
+
+    let getProductTitle = document.createElement("h1");
+    getProductTitle.innerText = product.title;
+    productCardContainer.appendChild(getProductTitle);
+    getProductTitle.className = "productTitle";
+
+    let getProductDescription = document.createElement("p");
+    getProductDescription.innerText = product.description;
+    productCardContainer.appendChild(getProductDescription);
+    getProductDescription.className = "productDescription";
+
+    let getProductImage = document.createElement("img");
+    getProductImage.scr = "./assets/" + product.image;
+    productCardContainer.appendChild(getProductImage);
+    getProductImage.className = "productImg";
+
+    let getProductPrice = document.createElement("p");
+    getProductPrice.innerText = product.price + "kr";
+    productCardContainer.appendChild(getProductPrice)
+    getProductPrice.className = "price";
+
+    let addButton = document.createElement("button");
+    addButton.className = "addBtn";
+    addButton.setAttribute("id", "addProduct");
+    addButton.addEventListener("click", function() {
+        addProduct(product)
+    });
+
+    let cartIcon = document.createElement("i");
+    cartIcon.className = "fas fa-cart-plus";
+    addButton.appendChild(cartIcon);
+    let buttonText =document.createTextNode("Lägg till i kundvagnen");
+    addButton.appendChild(buttonText);
+    productCardContainer.appendChild(addButton);
+
+    return productCardContainer;
+
 }
