@@ -33,7 +33,7 @@ function addProductsToWebpage() {
 
 function createProductCard(product) {
     let productCardContainer = document.createElement("div");
-    productCardContainer.className = "ProductCard"
+    productCardContainer.className = "ProductCardContainer"
 
     let getProductTitle = document.createElement("h1");
     getProductTitle.innerText = product.title;
@@ -46,7 +46,7 @@ function createProductCard(product) {
     getProductDescription.className = "productDescription";
 
     let getProductImage = document.createElement("img");
-    getProductImage.scr = "./assets/" + product.image;
+    getProductImage.src = "./assets/" + product.image;
     productCardContainer.appendChild(getProductImage);
     getProductImage.className = "productImg";
 
