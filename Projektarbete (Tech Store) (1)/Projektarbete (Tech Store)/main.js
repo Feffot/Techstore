@@ -18,7 +18,7 @@ function initSite() {
     // This would also be a good place to initialize other parts of the UI
 }
 
-//loads products from JSON
+//loads products from JSON to HTML
 function addProductsToWebpage() {
         let productContainer = document.createElement("div");
         productContainer.className = "productCard";
