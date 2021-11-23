@@ -31,6 +31,7 @@ function addProductsToWebpage() {
 
 }
 
+//creating the products
 function createProductCard(product) {
     let productCardContainer = document.createElement("div");
     productCardContainer.className = "ProductCardContainer"
