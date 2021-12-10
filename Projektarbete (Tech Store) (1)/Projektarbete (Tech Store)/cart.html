@@ -5,14 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/7a727e3fe8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./CSS/style.css">
+    <script defer src="/cart.js"></script>
+    <!-- <script defer src="./main.js"></script> -->
     <title>Cart</title>
+    <link rel="stylesheet" href="./CSS/common.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/cart.css">
 </head>
-<body onload="initSite()">
+<body onload="initCart()">
     <header class="header">
-        <!-- Your header title and shopping cart button goes here  -->
-        <h1 class="title">TechStore</h1>
-        <i class="fas fa-shopping-cart"></i>
+        <div>
+            <h1 class="title">TechStore</h1>
+        </div>
+        <div>
+            <span id="counter">0</span>
+            <a href="./cart.html" class="fas fa-shopping-cart"></a>
+        </div>
     </header>
     
     <main>

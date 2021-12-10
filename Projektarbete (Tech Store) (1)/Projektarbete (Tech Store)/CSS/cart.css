@@ -1,0 +1,18 @@
+.ProductCardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10%;
+    border: 2px solid blue;
+    width: 15em;
+}
+
+.productImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20em;
+    object-fit: scale-down;
+}
