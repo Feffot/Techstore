@@ -1,0 +1,31 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    height: 10%;
+    width: 100%;
+    top: 0;
+    background: black;
+    color: white;
+}
+
+.title{
+    padding-left: 1em;
+    padding-top: 20px;
+    padding-right: 20em;
+    font-weight: 600;
+    font-size: 3em;
+}
+
+#counter {
+    padding-top: 1em;
+    padding-right: 1em;
+    font-size: 2em;
+}
+
+.fa-shopping-cart {
+    padding-top: 1em;
+    padding-right: 1em;
+    font-size: 2em;
+    color: inherit;
+}

@@ -1,4 +1,5 @@
 var listOfProducts;
+let cart = [];
 
 /** Get products from the json file and store it in a gobal variable */
 function loadProducts() {
@@ -15,8 +16,8 @@ function loadProducts() {
 
 function initSite() {
     loadProducts();
-    // This would also be a good place to initialize other parts of the UI
-}
+    cartCounter ();
+ }
 
 //loads products from JSON to HTML
 function addProductsToWebpage() {
@@ -29,6 +30,10 @@ function addProductsToWebpage() {
 
         document.querySelector("main").appendChild(productContainer);
 
+}
+// counter function
+function cartCounter () {
+    document.getElementById("counter").innerHTML = cart.length;
 }
 
 //creating the products
@@ -60,16 +65,39 @@ function createProductCard(product) {
     addButton.className = "addBtn";
     addButton.setAttribute("id", "addProduct");
     addButton.addEventListener("click", function() {
-        addProduct(product)
+        addToCart(product)
     });
 
     let cartIcon = document.createElement("i");
     cartIcon.className = "fas fa-cart-plus";
     addButton.appendChild(cartIcon);
-    let buttonText =document.createTextNode("Lägg till i kundvagnen");
+    let buttonText = document.createTextNode("Lägg till i kundvagnen");
     addButton.appendChild(buttonText);
     productCardContainer.appendChild(addButton);
 
     return productCardContainer;
 
 }
+
+// adds items to local storage and displays items in counter
+
+
+
+if (localStorage.cart) {
+    cart = JSON.parse(localStorage.cart)
+}
+
+
+function addToCart(product) {
+    let productCounter = 1;
+    document.getElementById("counter").innerHTML = productCounter + cart.length;
+    cart.push(product);
+    let cartString = JSON.stringify(cart);
+    localStorage.cart = cartString;
+
+}
+
+
+
+
+
